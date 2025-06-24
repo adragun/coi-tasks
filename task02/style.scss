@@ -1,0 +1,125 @@
+html {
+  overflow-x: hidden;
+}
+body {
+  margin: 4rem 0;
+  overflow-x: hidden;
+  text-align: center;
+}
+h1,
+h2,
+p,
+a {
+  margin: 0;
+}
+a {
+  font-weight: bold;
+  color: black;
+}
+.container {
+  display: grid;
+  gap: 4rem;
+  margin: 0 auto;
+  max-width: 90rem;
+}
+.intro-section {
+  display: grid;
+  gap: 1rem;
+}
+.recipes-section {
+  display: grid;
+  grid-auto-flow: column;
+}
+.recipe {
+  position: relative;
+  &__image {
+    margin-bottom: 2rem;
+    position: relative;
+    border-radius: 50%;
+    z-index: 1;
+  }
+}
+#recipe01::before {
+  content: "";
+  position: absolute;
+  top: -4rem;
+  left: -2rem;
+  width: 15rem;
+  height: 15rem;
+  background: url("/task02/images/recipe1bg.png") no-repeat center;
+  background-size: contain;
+  z-index: 0;
+}
+#recipe02::after {
+  content: "";
+  position: absolute;
+  top: -4.5rem;
+  right: -0.5rem;
+  width: 15rem;
+  height: 15rem;
+  background: url("/task02/images/recipe2bg.png") no-repeat center;
+  background-size: contain;
+  z-index: 0;
+}
+#recipe02::before {
+  content: "";
+  position: absolute;
+  bottom: -1rem;
+  left: -2rem;
+  width: 15rem;
+  height: 15rem;
+  background: url("/task02/images/recipe2bg2.png") no-repeat center;
+  background-size: contain;
+  z-index: 0;
+}
+#recipe03::before {
+  content: "";
+  position: absolute;
+  bottom: -1rem;
+  right: -1.75rem;
+  width: 15rem;
+  height: 15rem;
+  background: url("/task02/images/recipe3bg.png") no-repeat center;
+  background-size: contain;
+  z-index: 0;
+}
+
+@media (max-width: 90rem) {
+  .container {
+    max-width: 19rem;
+    margin: 0 auto;
+  }
+  .recipes-section {
+    grid-auto-flow: row;
+    gap: 4rem;
+  }
+  .recipe {
+    &__image {
+      max-width: 19rem;
+      max-height: 19rem;
+    }
+  }
+  #recipe01::before {
+    left: -3.5rem;
+    width: 12rem;
+    height: 12rem;
+  }
+  #recipe02::after {
+    top: -3.5rem;
+    right: -2.8rem;
+    width: 12rem;
+    height: 12rem;
+  }
+  #recipe02::before {
+    bottom: 1rem;
+    left: -4rem;
+    width: 12rem;
+    height: 12rem;
+  }
+  #recipe03::before {
+    bottom: 1.2rem;
+    right: -2.5rem;
+    width: 12rem;
+    height: 12rem;
+  }
+}
