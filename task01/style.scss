@@ -1,0 +1,89 @@
+body {
+  text-align: center;
+}
+h1,
+p {
+  margin: 0;
+}
+
+.card {
+  margin: 0 auto;
+  margin-top: 200vh;
+  margin-bottom: 200vh;
+  display: flex;
+  align-items: center;
+  max-width: 90rem;
+  min-height: 36rem;
+
+  background-color: #e3cfcf;
+
+  opacity: 1;
+  transition: opacity 0.4s ease;
+
+  &.invisible {
+    opacity: 0;
+  }
+
+  &__image {
+    width: 50%;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__text {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+    width: 32rem;
+  }
+
+  &__btn {
+    width: max-content;
+    align-self: center;
+    border: 1px solid black;
+    padding: 1rem 3rem;
+    background-color: transparent;
+    font-weight: bold;
+  }
+}
+
+@media (max-width: 90rem) {
+  .card {
+    flex-direction: column;
+    max-width: 23.438rem;
+
+    &__image {
+      width: 100%;
+    }
+
+    &__text {
+      width: 100%;
+    }
+    &__content {
+      padding: 4rem 1rem;
+    }
+
+    &__btn {
+      padding: 1rem 1.5rem;
+    }
+  }
+}
+
+.expendable {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s ease-in-out;
+
+  &.expend {
+    max-height: 300px;
+  }
+}
