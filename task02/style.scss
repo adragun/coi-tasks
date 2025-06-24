@@ -1,10 +1,38 @@
+$recipe1bg: "/task02/images/recipe1bg.png";
+$recipe2bg: "/task02/images/recipe2bg.png";
+$recipe2bg2: "/task02/images/recipe2bg2.png";
+$recipe3bg: "/task02/images/recipe3bg.png";
+$bg-size-desktop: 15rem;
+$bg-size-mobile: 12rem;
+
+@mixin decorative-bg(
+  $url,
+  $top: auto,
+  $right: auto,
+  $bottom: auto,
+  $left: auto,
+  $size: auto
+) {
+  content: "";
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  width: $size;
+  height: $size;
+  background: url($url) no-repeat center;
+  background-size: contain;
+  z-index: 0;
+}
+
 html {
   overflow-x: hidden;
 }
 body {
-  margin: 4rem 0;
-  overflow-x: hidden;
+  margin: 4rem auto;
   text-align: center;
+  overflow-x: hidden;
 }
 h1,
 h2,
@@ -38,50 +66,48 @@ a {
     border-radius: 50%;
     z-index: 1;
   }
-}
-#recipe01::before {
-  content: "";
-  position: absolute;
-  top: -4rem;
-  left: -2rem;
-  width: 15rem;
-  height: 15rem;
-  background: url("/task02/images/recipe1bg.png") no-repeat center;
-  background-size: contain;
-  z-index: 0;
-}
-#recipe02::after {
-  content: "";
-  position: absolute;
-  top: -4.5rem;
-  right: -0.5rem;
-  width: 15rem;
-  height: 15rem;
-  background: url("/task02/images/recipe2bg.png") no-repeat center;
-  background-size: contain;
-  z-index: 0;
-}
-#recipe02::before {
-  content: "";
-  position: absolute;
-  bottom: -1rem;
-  left: -2rem;
-  width: 15rem;
-  height: 15rem;
-  background: url("/task02/images/recipe2bg2.png") no-repeat center;
-  background-size: contain;
-  z-index: 0;
-}
-#recipe03::before {
-  content: "";
-  position: absolute;
-  bottom: -1rem;
-  right: -1.75rem;
-  width: 15rem;
-  height: 15rem;
-  background: url("/task02/images/recipe3bg.png") no-repeat center;
-  background-size: contain;
-  z-index: 0;
+  &--01::before {
+    @include decorative-bg(
+      $recipe1bg,
+      -4rem,
+      auto,
+      auto,
+      -2rem,
+      $bg-size-desktop
+    );
+  }
+
+  &--02::after {
+    @include decorative-bg(
+      $recipe2bg,
+      -4.5rem,
+      0.5rem,
+      auto,
+      auto,
+      $bg-size-desktop
+    );
+  }
+
+  &--02::before {
+    @include decorative-bg(
+      $recipe2bg2,
+      auto,
+      auto,
+      -1rem,
+      -2rem,
+      $bg-size-desktop
+    );
+  }
+  &--03::before {
+    @include decorative-bg(
+      $recipe3bg,
+      auto,
+      -1.75rem,
+      -1rem,
+      auto,
+      $bg-size-desktop
+    );
+  }
 }
 
 @media (max-width: 90rem) {
@@ -98,28 +124,46 @@ a {
       max-width: 19rem;
       max-height: 19rem;
     }
-  }
-  #recipe01::before {
-    left: -3.5rem;
-    width: 12rem;
-    height: 12rem;
-  }
-  #recipe02::after {
-    top: -3.5rem;
-    right: -2.8rem;
-    width: 12rem;
-    height: 12rem;
-  }
-  #recipe02::before {
-    bottom: 1rem;
-    left: -4rem;
-    width: 12rem;
-    height: 12rem;
-  }
-  #recipe03::before {
-    bottom: 1.2rem;
-    right: -2.5rem;
-    width: 12rem;
-    height: 12rem;
+
+    &--01::before {
+      @include decorative-bg(
+        $recipe1bg,
+        -4rem,
+        auto,
+        auto,
+        -3.5rem,
+        $bg-size-mobile
+      );
+    }
+    &--02::after {
+      @include decorative-bg(
+        $recipe2bg,
+        -3.5rem,
+        -2.8rem,
+        auto,
+        auto,
+        $bg-size-mobile
+      );
+    }
+    &--02::before {
+      @include decorative-bg(
+        $recipe2bg2,
+        auto,
+        auto,
+        1rem,
+        -4rem,
+        $bg-size-mobile
+      );
+    }
+    &--03::before {
+      @include decorative-bg(
+        $recipe3bg,
+        auto,
+        -2.5rem,
+        1.2rem,
+        auto,
+        $bg-size-mobile
+      );
+    }
   }
 }

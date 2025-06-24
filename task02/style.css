@@ -3,9 +3,9 @@ html {
 }
 
 body {
-  margin: 4rem 0;
-  overflow-x: hidden;
+  margin: 4rem auto;
   text-align: center;
+  overflow-x: hidden;
 }
 
 h1,
@@ -46,11 +46,12 @@ a {
   border-radius: 50%;
   z-index: 1;
 }
-
-#recipe01::before {
+.recipe--01::before {
   content: "";
   position: absolute;
   top: -4rem;
+  right: auto;
+  bottom: auto;
   left: -2rem;
   width: 15rem;
   height: 15rem;
@@ -58,22 +59,24 @@ a {
   background-size: contain;
   z-index: 0;
 }
-
-#recipe02::after {
+.recipe--02::after {
   content: "";
   position: absolute;
   top: -4.5rem;
-  right: -0.5rem;
+  right: 0.5rem;
+  bottom: auto;
+  left: auto;
   width: 15rem;
   height: 15rem;
   background: url("/task02/images/recipe2bg.png") no-repeat center;
   background-size: contain;
   z-index: 0;
 }
-
-#recipe02::before {
+.recipe--02::before {
   content: "";
   position: absolute;
+  top: auto;
+  right: auto;
   bottom: -1rem;
   left: -2rem;
   width: 15rem;
@@ -82,12 +85,13 @@ a {
   background-size: contain;
   z-index: 0;
 }
-
-#recipe03::before {
+.recipe--03::before {
   content: "";
   position: absolute;
-  bottom: -1rem;
+  top: auto;
   right: -1.75rem;
+  bottom: -1rem;
+  left: auto;
   width: 15rem;
   height: 15rem;
   background: url("/task02/images/recipe3bg.png") no-repeat center;
@@ -108,27 +112,56 @@ a {
     max-width: 19rem;
     max-height: 19rem;
   }
-  #recipe01::before {
+  .recipe--01::before {
+    content: "";
+    position: absolute;
+    top: -4rem;
+    right: auto;
+    bottom: auto;
     left: -3.5rem;
     width: 12rem;
     height: 12rem;
+    background: url("/task02/images/recipe1bg.png") no-repeat center;
+    background-size: contain;
+    z-index: 0;
   }
-  #recipe02::after {
+  .recipe--02::after {
+    content: "";
+    position: absolute;
     top: -3.5rem;
     right: -2.8rem;
+    bottom: auto;
+    left: auto;
     width: 12rem;
     height: 12rem;
+    background: url("/task02/images/recipe2bg.png") no-repeat center;
+    background-size: contain;
+    z-index: 0;
   }
-  #recipe02::before {
+  .recipe--02::before {
+    content: "";
+    position: absolute;
+    top: auto;
+    right: auto;
     bottom: 1rem;
     left: -4rem;
     width: 12rem;
     height: 12rem;
+    background: url("/task02/images/recipe2bg2.png") no-repeat center;
+    background-size: contain;
+    z-index: 0;
   }
-  #recipe03::before {
-    bottom: 1.2rem;
+  .recipe--03::before {
+    content: "";
+    position: absolute;
+    top: auto;
     right: -2.5rem;
+    bottom: 1.2rem;
+    left: auto;
     width: 12rem;
     height: 12rem;
+    background: url("/task02/images/recipe3bg.png") no-repeat center;
+    background-size: contain;
+    z-index: 0;
   }
 }/*# sourceMappingURL=style.css.map */
