@@ -1,0 +1,50 @@
+{% schema %}
+{
+  "name": "Card Section",
+  "tag": "section",
+  "class": "card-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "card_image",
+      "label": "Card Image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Handcrafted and Responsibly Sourced"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "We denounce with righteous indignation..."
+    },
+    {
+      "type": "textarea",
+      "id": "expandable_text",
+      "label": "Expandable Text",
+      "default": "And equal blame belongs to those who fail..."
+    },
+    {
+      "type": "text",
+      "id": "button_label_more",
+      "label": "Button Label (Learn more)",
+      "default": "Learn more"
+    },
+    {
+      "type": "text",
+      "id": "button_label_less",
+      "label": "Button Label (Learn less)",
+      "default": "Learn less"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Card Section",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
